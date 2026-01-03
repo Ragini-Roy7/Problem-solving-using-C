@@ -1,3 +1,21 @@
-- uses: actions/checkout@v4
-- name: make
-  run: make
+name: C Build Check
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install GCC
+      run: sudo apt-get update && sudo apt-get install -y gcc
+
+    - name: Compile all C files
+      run: |
+        for file in *.c; do
+          echo "Compiling $file"
+          gcc "$file" -o "${file%.c}"
+        done
