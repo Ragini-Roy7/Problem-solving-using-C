@@ -9,11 +9,13 @@ int main(){
 
     for(int i=0;i<length;i++){
         if(count==0)
-        //suppossed jo nums[i] par hai woh candidate key hai whose val is in majority
+        //this count shows ki if element count is 0 ->candidate key 
         candidate= nums[i];
 
         if(nums[i]==candidate)
         count++;
+        //or agar wahi same num mile toh uski val by+1 
+        //else not equal to candidate then dec it by-1with
         else count--;
         }
         printf("Majority element is %d",candidate);
