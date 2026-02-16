@@ -13,6 +13,7 @@ int main(){
     //         printf("%d is subset of %d\n",A,B);
     //     }
     // }
+    //array subset
     int isSubset=1; //assume b susbet hai
     for(int i=0; i<sizeB;i++){
         int found=0;
