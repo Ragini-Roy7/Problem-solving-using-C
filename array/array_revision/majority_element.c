@@ -1,4 +1,5 @@
 //Boyer-Moore Voting algo
+
 #include <stdio.h>
 int main(){
     int nums[]= {2,2,1,1,1,2,2};
