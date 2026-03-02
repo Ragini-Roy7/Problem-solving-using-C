@@ -1,4 +1,5 @@
 #include <stdio.h>
+//basic op on array
 
 int main()
 {
