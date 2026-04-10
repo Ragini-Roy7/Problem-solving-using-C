@@ -46,21 +46,17 @@ int main() {
     int length = sizeof(arr) / sizeof(arr[0]);
 
     int visited[length];
-
-    // Initialize visited array
     for (int i = 0; i < length; i++)
         visited[i] = 0;
 
-    // Mark duplicates
     for (int i = 0; i < length; i++) {
         for (int j = i + 1; j < length; j++) {
             if (arr[i] == arr[j]) {
-                visited[j] = 1;  // mark duplicate index
+                visited[j] = 1; 
             }
         }
     }
 
-    // Print only unique elements
     printf("Array after removing duplicates:\n");
     for (int i = 0; i < length; i++) {
         if (visited[i] == 0) {
