@@ -164,6 +164,21 @@ void delete_from_end(){
     prevNode->next=NULL;
     free(temp);
 }
+void delete_from_specific_position(){
+    struct node *nextNode;
+    int position,i;
+    temp=head;
+    printf("enter position to delete\n");
+    scanf("%d",&position);
+    while(i<position-1){
+        temp=temp->next;
+        i++;
+    }
+    nextNode=temp->next;
+    temp->next= nextNode->next;
+    free(nextNode);
+
+}
 
 int main(){
     insert_at_begining(6);
@@ -180,5 +195,8 @@ int main(){
     printf("Linked list after deletion from end:\n");
     display_linked_list();
 
+    delete_from_specific_position(2);
+    printf("Linked list after deletion at first pos\n");
+    display_linked_list();
     return 0;
 }
