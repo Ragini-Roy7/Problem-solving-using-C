@@ -2,6 +2,8 @@
 #include <ctype.h>
 #include <stdlib.h>
 
+
+
 int main(){
 
     struct node{
@@ -14,8 +16,10 @@ int main(){
     struct node *head, *NewNode, *temp;
     head = NULL;
 
+int choice=1;
+
     // typecasting next ptr to struct node using malloc assigning dynamic memory allocation
-    int choice = 1;   // must initialize choice
+     // must initialize choice
 
     while(choice == 1){
 
