@@ -112,7 +112,6 @@ void insert_at_begining(int val){
     NewNode->next = head;
     head = NewNode;
 }
-
 void display_linked_list() {
     temp = head;
 
@@ -127,6 +126,61 @@ void display_linked_list() {
         temp = temp->next;
     }
 }
+
+// void insert_at_end(int val){
+//     NewNode= (struct node*)malloc(sizeof(struct node));
+//     //condition 1: if only one node 
+//     //means head==NewNode
+//     //storing data to be inserted into val ie. passed as arguments
+//     NewNode->data = val;
+//     if(head==NewNode){
+//         //no need to insert any element
+//         //display simply linked_list
+//         display_linked_list();
+//     }
+//     //condition 2: more than one node
+//     //67->68
+//     //head->67 (prev)
+//     //head->next==NewNode ie. 67 is newNode
+//     //use temp to traverse through linked list
+//     //store temp=newNode
+//     NewNode= temp;
+//     //temp should point towards newNode
+//     temp->next=NewNode;
+
+// }
+void insert_at_the_end(int val){
+    //if head is null 
+    //no need to insert at the end 
+    if(head==NULL){
+        head==NewNode;
+        display_linked_list();
+        return;
+    }
+     NewNode->data = val;
+    //assign temp as head
+    //since traversal is done via temp
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    temp->next=NewNode;
+
+}
+
+// void display_linked_list() {
+//     temp = head;
+
+//     if (temp == NULL) {
+//         printf("Linked list is empty\n");
+//         return;
+//     }
+
+//     // update the temp pointer to mark traversal
+//     while (temp != NULL) {
+//         printf("data %d\n", temp->data);
+//         temp = temp->next;
+//     }
+// }
 
 void delete_from_beginning(){
     if(head==NULL){
@@ -164,39 +218,43 @@ void delete_from_end(){
     prevNode->next=NULL;
     free(temp);
 }
-void delete_from_specific_position(){
-    struct node *nextNode;
-    int position,i;
-    temp=head;
-    printf("enter position to delete\n");
-    scanf("%d",&position);
-    while(i<position-1){
-        temp=temp->next;
-        i++;
-    }
-    nextNode=temp->next;
-    temp->next= nextNode->next;
-    free(nextNode);
+// void delete_from_specific_position(){
+//     struct node *nextNode;
+//     int position,i;
+//     temp=head;
+//     printf("enter position to delete\n");
+//     scanf("%d",&position);
+//     while(i<position-1){
+//         temp=temp->next;
+//         i++;
+//     }
+//     nextNode=temp->next;
+//     temp->next= nextNode->next;
+//     free(nextNode);
 
-}
+// }
 
 int main(){
-    insert_at_begining(6);
-    insert_at_begining(34);
+    insert_at_begining(67); //deleted
+    // insert_at_begining(34);
+    // insert_at_begining(43);
     
     printf("Linked list after insertions:\n");
     display_linked_list();
 
-    delete_from_beginning();
-    printf("Linked list after deletion from beginning:\n");
+    insert_at_the_end(89);
     display_linked_list();
 
-    delete_from_end();
-    printf("Linked list after deletion from end:\n");
-    display_linked_list();
+    // delete_from_beginning();
+    // printf("Linked list after deletion from beginning:\n");
+    // display_linked_list();
 
-    delete_from_specific_position(2);
-    printf("Linked list after deletion at first pos\n");
-    display_linked_list();
+    // delete_from_end();
+    // printf("Linked list after deletion from end:\n");
+    // display_linked_list();
+
+    // delete_from_specific_position();
+    // printf("Linked list after deletion from pos\n");
+    // display_linked_list();
     return 0;
 }
